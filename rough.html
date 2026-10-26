@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <style>
+        body {
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            min-height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* Navigation bar */
+        header {
+            background-color:rgb(172, 105, 63);
+            padding: 5px 15px;
+            min-height: 70px;
+            border: 5px outset rgb(10, 10, 10);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 450px;
+    background: white;
+    border: 2px solid #5c3925;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-left: 200px;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 16px;
+    border: none;
+    background-color: rgb(172, 105, 63);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: rgb(220, 155, 100);
+}
+
+/* Menu icon container */
+.menu-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    font-size: 30px;
+    color: #302d2d;
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    background-color: #f0c49a;
+}
+
+/* Hidden dropdown */
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: rgb(172, 105, 63);
+    border: 2px solid #080808;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Show on hover or keyboard focus */
+.menu-dropdown:hover .menu-content,
+.menu-dropdown:focus-within .menu-content {
+    display: block;
+}
+
+/* Dropdown links */
+.menu-content a {
+    display: block;
+    padding: 15px 20px;
+    color: #302d2d;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #f0c49a;
+    padding-left: 28px;
+}
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li a {
+            display: block;
+            color: rgb(48, 45, 45);
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            text-decoration: none;
+            font-family: Cambria, Cochin, Georgia, Times,
+                         'Times New Roman', serif;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            border-radius: 80px;
+            font-style: italic;
+           background-color:  rgb(221, 156, 116);
+    transform: scale(1.1);
+    
+    transition: 0.4s;
+        }
+
+        /* Container for the welcome box */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        /* Welcome box */
+        .box {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 320px;
+            padding: 35px;
+            box-sizing: border-box;
+            margin-left: 150px;
+            background-color:  rgba(146, 114, 77, 0.5);
+            border: 2px solid #080808;
+            border-radius: 50px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #0e0d0d;
+            cursor: pointer;
+           transition-duration: 0.4s;
+           box-shadow: 0 8px 16px 0 rgba(20, 20, 20, 100); 
+           }
+           .box:hover {
+    background-color: rgba(243, 192, 133, 0.5);
+    transform: scale(1.05);
+    
+    transition: 0.4s;
+}
+        
+
+        /* Heading at the top */
+        .box h1 {
+            font-size: 38px;
+            margin: 10px 0 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: oblique;
+        }
+
+        /* Paragraph below the heading */
+        .box p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+    .image-container {
+    display: flex;
+    gap: 50px;
+    margin-left: 65px;
+    align-items: row;
+    width: 100%;
+    margin-top: 80px;
+}
+.card {
+    width: 250px;
+    height: 500px;
+    flex-shrink: 0;
+    padding: 0;
+    box-sizing: border-box;
+flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border: 2px solid #080808;
+    border-radius: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.card:first-child {
+    background-image: url('taj2.png');
+}
+
+
+.card:nth-child(2) {
+    background-image: url('beach.png');
+}
+.card:nth-child(3) {
+    background-image: url('mountain.png');
+}
+.card:nth-child(4) {
+    background-image: url('tower.png');
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: #050505;
+     transform: scale(1.05);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: height 0.5s ease;
+    border-radius: 30px;
+}
+
+.card:hover .overlay {
+    height: 100%;
+}
+
+.overlay h2 {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.overlay p {
+    font-size: 16px;
+    padding: 10px;
+}
+footer{
+     background-color:rgb(172, 105, 63);
+            padding: 5px 15px;
+            min-height: 40px;
+            border: 5px outset rgb(10, 10, 10);
+            border-radius: 100px;
+            text-align: center;
+            padding-left: 500px;
+           padding-top: 20px;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+            
+            
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <ul>
+            <li><a href="login.html">👤 Login</a></li>
+            
+        </ul>
+        
+
+    <form class="search-bar" action="#" method="get">
+        <input type="search" name="destination"
+               placeholder="Search destinations...">
+        <button type="submit">🔍</button>
+    </form>
+
+<div class="menu-dropdown">
+    <button class="menu-icon">☰</button>
+
+    <div class="menu-content">
+        <a href="rough.html"> 🏡 Home</a>
+        <a href="destination.html">🌍 Destinations</a>
+        <a href="gallery.html">🌄 gallery</a>
+        <a href="booking.html">📋bookings</a>
+        <a href="contact.html">☎️Contact</a>
+    </div>
+</div>
+    
+    </header>
+
+    <div class="container">
+        <div class="box">
+
+            <h1>Welcome to our tourist world 🌏!!</h1>
+
+            <p >
+                Welcome to my little travel world, where every
+                destination has a story and every journey creates
+                a beautiful memory! 🏞️🌊 From breathtaking mountains
+                to peaceful beaches and vibrant cities, let's explore
+                the beauty of our world together. 🌅📸💫 Dream it. 
+                Plan it. Explore it.🧳 Pack your bags and let the 
+                adventure begin! The world is beautiful — let's 
+                discover it together! 🌎💗
+            </p>
+
+        </div>
+        <div class="image-container">
+ <div class="card">
+        <div class="overlay">
+            <h2>Taj Mahal 🕌</h2>
+            <p>Explore the beautiful symbol of love in India!</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="overlay">
+            <h2>Beautiful Beach 🌊</h2>
+            <p>Enjoy the waves and peaceful ocean views!</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="overlay">
+            <h2>Mountains 🏔️</h2>
+            <p>Discover nature and enjoy the mountain scenery!</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="overlay">
+            <h2>City Tower 🗼</h2>
+            <p>Explore the amazing sights of the city!</p>
+        </div>
+    </div>
+
+    
+</div>
+    </div>
+<footer>
+    <ul>
+             © 2026 Travel Website | Explore. Dream. Discover.
+    </ul>
+    </footer>
+
+</body>
+</html>

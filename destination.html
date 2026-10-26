@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <link rel="stylesheet" href="destinations.css">
+</head>
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #30251d;
+}
+
+header {
+    background-color: rgb(172, 105, 63);
+    padding: 20px 30px;
+    border: 3px outset black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    font-family: Georgia, serif;
+}
+.menu-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+
+.menu-icon {
+    font-size: 30px;
+    color: #302d2d;
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    background-color: #f0c49a;
+}
+
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: rgb(172, 105, 63);
+    border: 2px solid #080808;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+.menu-dropdown:hover .menu-content,
+.menu-dropdown:focus-within .menu-content {
+    display: block;
+}
+
+.menu-content a {
+    display: block;
+    padding: 15px 20px;
+    color: #302d2d;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #f0c49a;
+    padding-left: 28px;
+}
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #302d2d;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0c49a;
+}
+
+.heading {
+    text-align: center;
+    padding: 45px 15px 25px;
+}
+
+.heading h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.heading p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.destination-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 30px 50px;
+}
+
+.card {
+    width: 250px;
+    background: rgba(255, 245, 232, 0.92);
+    border: 2px solid #5c3925;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin: 18px 10px 10px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    background-color: #ac693f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #70482f;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background-color: rgba(172, 105, 63, 0.9);
+    border-top: 2px solid black;
+}
+
+</style>
+<body>
+
+    <header>
+        <h2>✈ Wanderlust</h2>
+         <div class="menu-dropdown">
+    <button class="menu-icon">☰</button>
+
+    <div class="menu-content">
+        <a href="rough.html"> 🏡 Home</a>
+        <a href="destination.html">🌍 Destinations</a>
+        <a href="gallery.html">🌄 gallery</a>
+          <a href="booking.html">📋bookings</a>
+        <a href="contact.html">☎️Contact</a>
+    </div>
+</div>
+    </header>
+
+    <div class="heading">
+        <h1>Explore Destinations 🌎</h1>
+        <p>Discover beautiful places and create unforgettable memories.</p>
+    </div>
+
+    <div class="destination-container">
+
+        <div class="card">
+            <img src="dev.png" alt="Devotional travel">
+            <h2>Devotional all over the country</h2>
+            <p>Find peace in sacred places✨</p>
+            <a href="https://en.wikipedia.org/wiki/Hindu_pilgrimage_sites_in_India"
+               target="_blank">Explore More</a>
+        </div>
+
+        <div class="card">
+            <img src="theme.png" alt="Theme park">
+            <h2>Theme Park</h2>
+            <p>Where fun meets adventure and every moment brings joy! 🎢</p>
+            <a href="https://en.wikipedia.org/wiki/Amusement_park"
+               target="_blank">Explore More</a>
+        </div>
+
+        <div class="card">
+            <img src="trek.png" alt="trekkings">
+            <h2>Thrilling trekkings</h2>
+            <p>Chase the peaks, embrace the trails, and discover nature’s beauty. 🏔️✨</p>
+            <a href="https://en.wikipedia.org/wiki/Hiking"
+               target="_blank">Explore More</a>
+        </div>
+
+        <div class="card">
+            <img src="dive.png" alt="under water">
+            <h2>Under-Water treasures</h2>
+            <p>Dive into the deep, discover wonders beneath the waves. 🤿🌊</p>
+            <a href="https://en.wikipedia.org/wiki/Scuba_diving"
+               target="_blank">Explore More</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Wanderlust Travel | Explore. Dream. Discover. ✈️</p>
+    </footer>
+
+</body>
+</html>

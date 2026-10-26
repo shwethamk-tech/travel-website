@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #30251d;
+}
+
+/* Navigation bar */
+header {
+    background-color: rgb(172, 105, 63);
+    padding: 20px 30px;
+    border: 3px outset black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    font-family: Georgia, serif;
+}
+.menu-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+
+.menu-icon {
+    font-size: 30px;
+    color: #302d2d;
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    background-color: #f0c49a;
+}
+
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: rgb(172, 105, 63);
+    border: 2px solid #080808;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+.menu-dropdown:hover .menu-content,
+.menu-dropdown:focus-within .menu-content {
+    display: block;
+}
+
+.menu-content a {
+    display: block;
+    padding: 15px 20px;
+    color: #302d2d;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #f0c49a;
+    padding-left: 28px;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: #302d2d;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0c49a;
+}
+
+/* Page heading */
+.heading {
+    text-align: center;
+    padding: 40px 15px;
+}
+
+.heading h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.heading p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Gallery layout */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 10px 30px 50px;
+}
+
+/* Individual photo card */
+.photo {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    border: 2px solid #080808;
+    border-radius: 25px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Image zoom */
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+/* Caption overlay */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 15px;
+    color: white;
+    text-align: center;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.photo:hover .caption {
+    transform: translateY(0);
+}
+
+.caption h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.caption p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.photo:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(172, 105, 63, 0.95);
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 22px;
+}
+
+</style>
+<body>
+
+    <header>
+        <h2>✈ Wanderlust</h2>
+ <div class="menu-dropdown">
+    <button class="menu-icon">☰</button>
+
+    <div class="menu-content">
+        <a href="rough.html"> 🏡 Home</a>
+        <a href="destination.html">🌍 Destinations</a>
+        <a href="gallery.html">🌄 gallery</a>
+          <a href="booking.html">📋bookings</a>
+        <a href="contact.html">☎️Contact</a>
+    </div>
+</div>
+       
+            
+        
+    </header>
+
+    <div class="heading">
+        <h1>Our Travel Gallery 📸</h1>
+        <p>Collect moments, not things. Explore the beauty of the world!</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="1.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="2.jpg" >
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="3.jpg" >
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="4.jpg" >
+            <div class="caption">
+                <h2>♡</h2>
+              
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="5.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+               
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="6.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="7.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="8.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="9.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="10.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="11.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="12.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="13.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+         <div class="photo">
+            <img src="14.jpg">
+            <div class="caption">
+                <h2>♡</h2>
+                
+            </div>
+        </div>
+        
+
+    </div>
+
+    <footer>
+        <p>© 2026 Wanderlust Travel | Explore. Dream. Discover. ✈️</p>
+    </footer>
+
+</body>
+</html>

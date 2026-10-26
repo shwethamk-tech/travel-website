@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', serif;
+    background-image:
+        linear-gradient(rgba(25, 20, 15, 0.35),
+                        rgba(25, 20, 15, 0.45)),
+        url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px;
+    color: white;
+}
+
+header h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 15px;
+    font-style: italic;
+}
+.menu-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+
+.menu-icon {
+    font-size: 30px;
+    color: #302d2d;
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    background-color: #f0c49a;
+}
+
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: rgb(172, 105, 63);
+    border: 2px solid #080808;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+.menu-dropdown:hover .menu-content,
+.menu-dropdown:focus-within .menu-content {
+    display: block;
+}
+
+.menu-content a {
+    display: block;
+    padding: 15px 20px;
+    color: #302d2d;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #f0c49a;
+    padding-left: 28px;
+}
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    background: rgba(255, 248, 239, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.login-box h1 {
+    color: #70482f;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+form {
+    text-align: left;
+}
+
+form > label {
+    display: block;
+    margin-bottom: 8px;
+    color: #49382b;
+    font-size: 15px;
+}
+
+form > input {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #d4c2b2;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 15px;
+    outline: none;
+}
+
+form > input:focus {
+    border-color: #a66d45;
+    box-shadow: 0 0 5px rgba(166, 109, 69, 0.3);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #574639;
+}
+
+.options a,
+.signup a {
+    color: #985d35;
+    text-decoration: none;
+}
+
+.options a:hover,
+.signup a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #9a6846;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #70482f;
+    transform: scale(1.02);
+}
+
+.signup {
+    margin-top: 25px;
+    color: #665548;
+    font-size: 14px;
+}
+
+footer {
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+</style>
+<body>
+
+<body>
+
+    <header>
+        <h2>✈ Wanderlust</h2>
+        <p>Explore • Dream • Discover</p>
+          <div class="menu-dropdown">
+    <button class="menu-icon">☰</button>
+
+    <div class="menu-content">
+        <a href="rough.html"> 🏡 Home</a>
+        <a href="destination.html">🌍 Destinations</a>
+        <a href="gallery.html">🌄 gallery</a>
+          <a href="booking.html">📋bookings</a>
+        <a href="contact.html">☎️Contact</a>
+    </div>
+</div>
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+
+            <h1>Welcome Back!</h1>
+            <p class="subtitle">Your next adventure starts here 🌍</p>
+
+            <form action="#" method="get">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password"
+                       placeholder="Enter your password" required>
+
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit">Login to Explore ✈</button>
+            </form>
+
+            <p class="signup">
+                New traveller?
+                <a href="#">Create an account</a>
+            </p>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Wanderlust Travel | Make memories everywhere
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
